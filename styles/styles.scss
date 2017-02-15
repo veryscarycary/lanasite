@@ -1,0 +1,142 @@
+@import 'breakpoints';
+@import 'mixins';
+
+$app-background-color: #f3f3f4;
+$boxes-background-color: #fff;
+
+h1,h2,h3,h4,h5 {
+  @include padding(0px, 0px, 0px, 0px);
+  @include margin(0px, 0px, 0px, 0px);
+}
+
+// START of nexted heirarchy of styles
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: $app-background-color;
+
+  table {
+    width: 100%;
+    .text-align-center {
+      @include padding(5px, 0px, 5px, 0px);
+      text-align: center;
+    }
+  }
+
+
+  .box-padding-margin {
+    $p: 20px;
+    $m: 20px;
+    @include padding($p, $p, $p, $p);
+    @include margin($m, $m, $m, $m);
+    background-color: $boxes-background-color;
+    border-style: solid;
+    border-width: thin;
+    border-color: darken($app-background-color, 5%);
+  }
+
+  .flex-col {
+    @include flex(column, null, null);
+  }
+
+  .flex-row {
+    @include flex(row, null, null);
+  }
+
+  .graph {
+    @include respond-to('small') {
+      width: 100%;
+    }
+    @include respond-to('medium') {
+      width: 66%;
+    }
+  }
+
+  .movies {
+    h2 {
+      @include margin(0px, 0px, 10px, 0px);
+    }
+    @include respond-to('small') {
+      width: auto;
+    }
+    @include respond-to('medium') {
+      width: 50%;
+    }
+  }
+
+  .orders-bar {
+    background-color: #eee;
+    border-radius: 200px;
+    height: 10px;
+    width: inherit;
+
+    .orders-bar-color-odd {
+      @extend .orders-bar;
+      background-color: #97bbcd;
+      width: 50%;
+    }
+
+    .orders-bar-color-even {
+      @extend .orders-bar;
+      @extend .orders-bar-color-odd;
+      background-color: #dcdcdc;
+    }
+  }
+
+  .order-totals {
+    font-size: 30px;
+  }
+
+  #graphAndOrdersContainer {
+    @include margin(20px, 0px, 20px, 0px);
+
+    @include respond-to('small') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('medium') {
+      @include flex(row, null, null);
+    }
+  }
+
+  #movie-tickets-container {
+    @include respond-to('small') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('medium') {
+      @include flex(row, space-around, null);
+    }
+  }
+
+  #orders-comparison {
+    @include respond-to('small') {
+      @include flex(row, space-around, null);
+    }
+    @include respond-to('medium') {
+      @include flex(column, space-around, center);
+      width: 33%;
+    }
+
+    @include padding(10px, 10px, 10px, 10px);
+  }
+
+  #salesAndUpdateContainer {
+    @include respond-to('medium') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('large') {
+      @include flex(row, space-between, null);
+    }
+  }
+
+  #totalMoviesSalesContainer {
+    @include respond-to('small') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('medium') {
+      @include flex(row, space-between, null);
+    }
+  }
+}
+
+// END of nested styles
