@@ -10,6 +10,7 @@
   <!-- JS Dependencies -->
   <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="./node_modules/underscore/underscore.js"></script>
+  <script src="node_modules/moment/min/moment.min.js"></script>
 
   <!-- Dependencies for Angular UI Bootstrap -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -17,34 +18,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
   <script type="text/javascript" src="./node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
 
-  <!-- Chart Dependencies -->
-  <script src="node_modules/moment/min/moment.min.js"></script>
-  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
-
 </head>
 <body>
-
   <div ng-app="app" ng-controller="mainCtrl">
-    <div class="box-padding-margin" ng-controller="lineCtrl">
-      <total-sales id="totalMoviesSalesContainer"></total-sales>
-      <div id="graphAndOrdersContainer">
-        <div class="graph">
-          <canvas id="line" class="graph chart chart-line" chart-data="data"
-            chart-labels="labels" chart-series="series" chart-options="options"
-            chart-dataset-override="datasetOverride" chart-click="onClick">
-          </canvas>
-        </div>
-        <orders-comparison id="orders-comparison"></orders-comparison>
 
-      </div>
-      <div id="salesAndUpdateContainer">
-        <sales-analysis></sales-analysis>
-        <update></update>
-      </div>
+    <!-- Begin header and nav -->
+    <nav-bar></nav-bar>
 
-    </div>
-    <movie-tickets id="movie-tickets-container"></movie-tickets>
+
+
+
+    <foot-bar></foot-bar>
+
 
   </div>
   <script type="text/javascript" src="./bundle/app.js"></script>

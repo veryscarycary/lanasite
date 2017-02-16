@@ -1,7 +1,9 @@
 @import 'breakpoints';
 @import 'mixins';
 
-$app-background-color: #f3f3f4;
+$nav-color: #434343;
+$nav-text-color: white;
+$app-background-color: #dfbf9f;
 $boxes-background-color: #fff;
 
 h1,h2,h3,h4,h5 {
@@ -9,21 +11,48 @@ h1,h2,h3,h4,h5 {
   @include margin(0px, 0px, 0px, 0px);
 }
 
-// START of nexted heirarchy of styles
+// START of nested heirarchy of styles
 
 html, body {
+  font-family: helvetica;
   width: 100%;
   height: 100%;
   background-color: $app-background-color;
 
-  table {
-    width: 100%;
-    .text-align-center {
-      @include padding(5px, 0px, 5px, 0px);
-      text-align: center;
+  li {
+    &:hover {
+      background-color: darken($nav-color, 20%);
     }
+    display: inline-block;
+    color: $nav-text-color;
+    padding: 0 10px;
+    list-style-type: none;
   }
 
+  .brand {
+    color: $nav-text-color;
+    font-size: 2em;
+    margin: 0 10px;
+  }
+
+  nav {
+    padding: 0 10px;
+    line-height: 50px;
+    background-color: $nav-color;
+    box-shadow: 0px 3px 5px;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: lighten($nav-color, 40%);
+  }
+
+  .flex-nav {
+    @include flex(row, space-between, null);
+  }
 
   .box-padding-margin {
     $p: 20px;
@@ -42,100 +71,6 @@ html, body {
 
   .flex-row {
     @include flex(row, null, null);
-  }
-
-  .graph {
-    @include respond-to('small') {
-      width: 100%;
-    }
-    @include respond-to('medium') {
-      width: 66%;
-    }
-  }
-
-  .movies {
-    h2 {
-      @include margin(0px, 0px, 10px, 0px);
-    }
-    @include respond-to('small') {
-      width: auto;
-    }
-    @include respond-to('medium') {
-      width: 50%;
-    }
-  }
-
-  .orders-bar {
-    background-color: #eee;
-    border-radius: 200px;
-    height: 10px;
-    width: inherit;
-
-    .orders-bar-color-odd {
-      @extend .orders-bar;
-      background-color: #97bbcd;
-      width: 50%;
-    }
-
-    .orders-bar-color-even {
-      @extend .orders-bar;
-      @extend .orders-bar-color-odd;
-      background-color: #dcdcdc;
-    }
-  }
-
-  .order-totals {
-    font-size: 30px;
-  }
-
-  #graphAndOrdersContainer {
-    @include margin(20px, 0px, 20px, 0px);
-
-    @include respond-to('small') {
-      @include flex(column, null, null);
-    }
-    @include respond-to('medium') {
-      @include flex(row, null, null);
-    }
-  }
-
-  #movie-tickets-container {
-    @include respond-to('small') {
-      @include flex(column, null, null);
-    }
-    @include respond-to('medium') {
-      @include flex(row, space-around, null);
-    }
-  }
-
-  #orders-comparison {
-    @include respond-to('small') {
-      @include flex(row, space-around, null);
-    }
-    @include respond-to('medium') {
-      @include flex(column, space-around, center);
-      width: 33%;
-    }
-
-    @include padding(10px, 10px, 10px, 10px);
-  }
-
-  #salesAndUpdateContainer {
-    @include respond-to('medium') {
-      @include flex(column, null, null);
-    }
-    @include respond-to('large') {
-      @include flex(row, space-between, null);
-    }
-  }
-
-  #totalMoviesSalesContainer {
-    @include respond-to('small') {
-      @include flex(column, null, null);
-    }
-    @include respond-to('medium') {
-      @include flex(row, space-between, null);
-    }
   }
 }
 
