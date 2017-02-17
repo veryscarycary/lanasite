@@ -29,6 +29,15 @@ html, body {
     list-style-type: none;
   }
 
+  .container {
+    width: 90%;
+    height: 500px;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #fff4db;
+    border-radius: 10px;
+  }
+
   .brand {
     color: $nav-text-color;
     font-size: 2em;
@@ -43,6 +52,7 @@ html, body {
   }
 
   footer {
+    @include flex(row, space-around, center);
     position: absolute;
     bottom: 0;
     width: 100%;
