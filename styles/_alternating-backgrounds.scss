@@ -1,0 +1,21 @@
+.cd-fixed-bg {
+  min-height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cd-fixed-bg.cd-bg-1 {
+  background-image: url("../images/bg1.jpg");
+}
+.cd-fixed-bg.cd-bg-2 {
+  background-image: url("../images/bg2.jpg");
+}
+.cd-fixed-bg.cd-bg-3 {
+  background-image: url("../images/bg3.jpg");
+}
+
+.cd-scrolling-bg {
+  min-height: 100%;
+}

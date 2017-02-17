@@ -1,4 +1,4 @@
-app.factory('misc', function () {
+app.factory('slideshowFactory', function () {
   var slideIndex = 1;
   showSlides(slideIndex);
 
@@ -11,23 +11,29 @@ app.factory('misc', function () {
   }
 
   function showSlides(n) {
-    var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
+
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
+
+    // run through all slide elements and hide them
+    for (var i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
+    // set chosen slide to block
     slides[slideIndex-1].style.display = "block";
+    slides[slideIndex-1].style.opacity = "1";
     dots[slideIndex-1].className += " active";
   }
 
   return {
+    slideIndex: 1,
     plusSlides: plusSlides,
-    currentSlide: currentSlide
+    currentSlide: currentSlide,
+    showSlides: showSlides
   };
 });
