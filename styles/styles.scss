@@ -1,8 +1,9 @@
 @import 'breakpoints';
 @import 'mixins';
+@import 'slideshow';
 
-$nav-color: #434343;
-$nav-text-color: white;
+$nav-color: white;
+$nav-text-color: black;
 $app-background-color: #dfbf9f;
 $boxes-background-color: #fff;
 
@@ -61,7 +62,7 @@ html, body {
   }
 
   .flex-nav {
-    @include flex(row, space-between, null);
+    @include flex(row, space-around, null);
   }
 
   .box-padding-margin {
