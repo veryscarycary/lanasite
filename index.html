@@ -21,7 +21,7 @@
 </head>
 <body>
   <div ng-app="app" ng-controller="mainCtrl">
-
+  <!-- BEGIN SLIDESHOW -->
     <div class="slideshow-container">
 
       <div class="mySlides fade">
@@ -45,30 +45,19 @@
       <a class="prev" ng-click="plusSlides(-1)">❮</a>
       <a class="next" ng-click="plusSlides(1)">❯</a>
 
-      <div style="text-align:center">
+      <div class="dots">
         <span class="dot" ng-click="currentSlide(1)"></span>
         <span class="dot" ng-click="currentSlide(2)"></span>
         <span class="dot" ng-click="currentSlide(3)"></span>
       </div>
 
     </div>
-
+    <!-- END SLIDE SHOW -->
     <!-- Begin header and nav -->
     <navbar class="flex-nav"></navbar>
+    <!-- END HEADER AND NAV -->
+    <main></main>
 
-    <!-- <main>
-    	<div class="cd-fixed-bg cd-bg-1">
-    		<h1></h1>
-    	</div>
-
-    	<div class="cd-scrolling-bg cd-color-2">
-    		<div class="cd-container">
-    			<p>
-    				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi...
-    			</p>
-    		</div>
-    	</div>
-    </main> -->
 
 
 
