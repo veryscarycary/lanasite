@@ -14,10 +14,12 @@
 
   <!-- Dependencies for Angular UI Bootstrap -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="/node_modules/angular-route/angular-route.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-touch.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
   <script type="text/javascript" src="./node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
-
+  <base href="/">
+  
 </head>
 <body>
   <div ng-app="app" ng-controller="mainCtrl">
@@ -53,17 +55,14 @@
 
     </div>
     <!-- END SLIDE SHOW -->
-    <!-- Begin header and nav -->
     <navbar class="flex-nav"></navbar>
-    <!-- END HEADER AND NAV -->
-    <main></main>
 
+    <div ng-view></div>
+      <main></main>
 
 
 
     <foot-bar></foot-bar>
-
-
   </div>
   <script type="text/javascript" src="./bundle/app.js"></script>
 </body>
