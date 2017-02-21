@@ -1,9 +1,15 @@
+#contact {
+  margin-top: 50px;
+}
+
+
+$border-color: #c19b81;
 form {
   max-width: 450px;
-  margin: 0 auto 100px;
+  margin: 0 auto 50px;
   padding: 0 20px; }
   form input, form textarea {
-    border: 3px solid #bd252a;
+    border: 3px solid $border-color;
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -15,20 +21,20 @@ form {
     font-size: 16px; }
     form input:focus, form textarea:focus {
       outline: none;
-      border-color: #e1c285; }
+      border-color: lighten($border-color, 20%); }
   form textarea {
     height: 10em;
     resize: none; }
   form .submit-wrap {
     text-align: right; }
   form [type="submit"] {
-    background: #bd252a;
+    background: $border-color;
     color: white;
     font-size: 18px;
     text-transform: uppercase;
     width: 33%; }
     form [type="submit"]:hover {
-      background: #bd2550; }
+      background: lighten($border-color, 20%); }
   form .contact-info-group label {
     width: 50%;
     float: left;
